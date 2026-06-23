@@ -23,10 +23,17 @@ ROLE_DISPLAY = {
 @router.get("/", response_class=HTMLResponse)
 async def entry_page(request: Request):
     """Login/Register page."""
-    return request.app.state.templates.TemplateResponse("entry.html", {
-        "request": request,
-        "step": "login",
-    })
+    try:
+        return request.app.state.templates.TemplateResponse("entry.html", {
+            "request": request,
+            "step": "login",
+        })
+    except Exception as e:
+        import traceback
+        return HTMLResponse(
+            f"<h1>500 Internal Server Error</h1><pre>{traceback.format_exc()}</pre>",
+            status_code=500
+        )
 
 
 @router.post("/login", response_class=HTMLResponse)
