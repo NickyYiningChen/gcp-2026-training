@@ -759,7 +759,8 @@ select.input-field{
   .nav-center{display:none}
   .nav-left{margin-right:0}
   .nav-right{margin-left:0}
-  .main-content{padding:calc(var(--nav-height) + 28px + 28px) 16px 130px}
+  .header-disclaimer{font-size:11px;padding:4px 12px}
+  .main-content{padding:calc(var(--nav-height) + 2px + 68px) 16px 130px}
   .page-header h1{font-size:24px}
   .chapter-grid{grid-template-columns:1fr 1fr}
   .bottom-nav{left:16px;right:16px;transform:none;border-radius:var(--radius-lg)}
