@@ -11,7 +11,7 @@ TEMPLATES_DIR = WEB_DIR / "templates"
 app = FastAPI(title="GCP 2026 Training", version="1.0.0")
 
 # Template engine (must be set before routes that use it)
-templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
+templates = Jinja2Templates(directory=str(TEMPLATES_DIR), cache_size=0)
 app.state.templates = templates
 
 # Mount static files
